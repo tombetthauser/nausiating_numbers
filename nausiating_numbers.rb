@@ -1,3 +1,5 @@
+require "byebug"
+
 # Nauseating Numbers
 
 # Time for more problems! As you progress through this set of problems, the 
@@ -27,11 +29,11 @@ end
 
 # Examples
 
-p strange_sums([2, -3, 3, 4, -2])     # 2
-p strange_sums([42, 3, -1, -42])      # 1
-p strange_sums([-5, 5])               # 1
-p strange_sums([19, 6, -3, -20])      # 0
-p strange_sums([9])                   # 0
+# p strange_sums([2, -3, 3, 4, -2])     # 2
+# p strange_sums([42, 3, -1, -42])      # 1
+# p strange_sums([-5, 5])               # 1
+# p strange_sums([19, 6, -3, -20])      # 0
+# p strange_sums([9])                   # 0
 
 # pair_product
 
@@ -440,15 +442,49 @@ p strange_sums([9])                   # 0
 # number, because 2 is the smallest prime. When a smaller prime cannot be calculated, 
 # replace the element with nil.
 
+def pretentious_primes(arr, n)
+  arr.map do |num|
+    n > 0 ? next_prime(num, n) : prev_prime(num, n)
+  end
+end
+
+def next_prime(num, n)
+  primes = []
+  (num+1..num**2).each do |fact| 
+    primes << fact if is_prime?(fact)
+    return primes.last if primes.length >= n
+  end
+end
+
+def prev_prime(num, n)
+  primes = []
+  i = num - 1
+  while i > 0
+    primes << i if is_prime?(i)
+    return primes.last if primes.length >= n.abs
+    i -= 1
+  end
+end
+
+def is_prime?(num)
+  return false if num < 2
+  (2...num).each { |fact| return false if num % fact == 0 }
+  true
+end
+
+
+
+#started 1:42pm, finished 1:58pm --> ~16 minutes
+
 # Examples
 
-# # p pretentious_primes([4, 15, 7], 1)           # [5, 17, 11]
-# # p pretentious_primes([4, 15, 7], 2)           # [7, 19, 13]
-# # p pretentious_primes([12, 11, 14, 15, 7], 1)  # [13, 13, 17, 17, 11]
-# # p pretentious_primes([12, 11, 14, 15, 7], 3)  # [19, 19, 23, 23, 17]
-# # p pretentious_primes([4, 15, 7], -1)          # [3, 13, 5]
-# # p pretentious_primes([4, 15, 7], -2)          # [2, 11, 3]
-# # p pretentious_primes([2, 11, 21], -1)         # [nil, 7, 19]
-# # p pretentious_primes([32, 5, 11], -3)         # [23, nil, 3]
-# # p pretentious_primes([32, 5, 11], -4)         # [19, nil, 2]
-# # p pretentious_primes([32, 5, 11], -5)         # [17, nil, nil]
+# p pretentious_primes([4, 15, 7], 1)           # [5, 17, 11]
+# p pretentious_primes([4, 15, 7], 2)           # [7, 19, 13]
+# p pretentious_primes([12, 11, 14, 15, 7], 1)  # [13, 13, 17, 17, 11]
+# p pretentious_primes([12, 11, 14, 15, 7], 3)  # [19, 19, 23, 23, 17]
+# p pretentious_primes([4, 15, 7], -1)          # [3, 13, 5]
+# p pretentious_primes([4, 15, 7], -2)          # [2, 11, 3]
+# p pretentious_primes([2, 11, 21], -1)         # [nil, 7, 19]
+# p pretentious_primes([32, 5, 11], -3)         # [23, nil, 3]
+# p pretentious_primes([32, 5, 11], -4)         # [19, nil, 2]
+# p pretentious_primes([32, 5, 11], -5)         # [17, nil, nil]
