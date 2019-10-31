@@ -67,13 +67,22 @@ end
 
 # Examples
 
-p pair_product([4, 2, 5, 8], 16)    # true
-p pair_product([8, 1, 9, 3], 8)     # true
-p pair_product([3, 4], 12)          # true
-p pair_product([3, 4, 6, 2, 5], 12) # true
-p pair_product([4, 2, 5, 7], 16)    # false
-p pair_product([8, 4, 9, 3], 8)     # false
-p pair_product([3], 12)             # false
+# p pair_product([4, 2, 5, 8], 16)    # true
+# p pair_product([8, 1, 9, 3], 8)     # true
+# p pair_product([3, 4], 12)          # true
+# p pair_product([3, 4, 6, 2, 5], 12) # true
+# p pair_product([4, 2, 5, 7], 16)    # false
+# p pair_product([8, 4, 9, 3], 8)     # false
+# p pair_product([3], 12)             # false
+
+
+
+
+
+
+
+
+
 
 # rampant_repeats
 
@@ -82,12 +91,26 @@ p pair_product([3], 12)             # false
 # are repeated the number of times specified by the hash. If a character does not 
 # exist as a key of the hash, then it should remain unchanged.
 
+def rampant_repeats(string, hash)
+  string.split("").inject("") do |acc, char|
+    if hash[char]
+      temp = ""
+      hash[char].times { temp += char }
+      acc += temp
+    else
+      acc += char
+    end
+  end
+end
+
+# ~3.5 min(rusty with bug)
+
 # Examples
 
-# p rampant_repeats('taco', {'a'=>3, 'c'=>2})             # 'taaacco'
-# p rampant_repeats('feverish', {'e'=>2, 'f'=>4, 's'=>3}) # 'ffffeeveerisssh'
-# p rampant_repeats('misispi', {'s'=>2, 'p'=>2})          # 'mississppi'
-# p rampant_repeats('faarm', {'e'=>3, 'a'=>2})            # 'faaaarm'
+p rampant_repeats('taco', {'a'=>3, 'c'=>2})             # 'taaacco'
+p rampant_repeats('feverish', {'e'=>2, 'f'=>4, 's'=>3}) # 'ffffeeveerisssh'
+p rampant_repeats('misispi', {'s'=>2, 'p'=>2})          # 'mississppi'
+p rampant_repeats('faarm', {'e'=>3, 'a'=>2})            # 'faaaarm'
 
 # perfect_square?
 
