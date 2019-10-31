@@ -129,8 +129,11 @@ end
 # 144 are perfect squares; 35 is not a perfect square.
 
 def perfect_square(num)
-  "#{num} #{[true, false].sample}"
+  (1..num).each { |fact| return true if num.to_f / fact == fact }
+  false
 end
+
+# ~3.5min(rusty with bug)
 
 
 # Examples
