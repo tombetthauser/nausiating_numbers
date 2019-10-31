@@ -259,8 +259,14 @@ end
 # 4 7     3 0      7 7
 
 def matrix_addition(matrix_1, matrix_2)
-  "#{matrix_1} // #{matrix_2}"
+  matrix_1.map.with_index do |sub_arr, idx_1|
+    sub_arr.map.with_index do |ele, idx_2|
+      ele + matrix_2[idx_1][idx_2]
+    end
+  end
 end
+
+# ~3.5min(rusty)
 
 # Examples
 
