@@ -207,8 +207,18 @@ end
 # meet this criteria are also known as highly composite numbers.
 
 def anti_prime?(num)
-  "#{num} #{[true, false].sample}"
+  divisors = divisors_count(num)
+  (1...num).each do |smaller_num|
+    return false if divisors < divisors_count(smaller_num)
+  end
+  true
 end
+
+def divisors_count(num)
+  (1..num).select { |fact| num % fact == 0 }.count
+end
+
+# ~6min(rusty)
 
 # Examples
 
