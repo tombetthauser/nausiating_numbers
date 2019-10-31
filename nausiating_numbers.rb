@@ -138,17 +138,66 @@ end
 
 # Examples
 
-p perfect_square(1)     # true
-p perfect_square(4)     # true
-p perfect_square(64)    # true
-p perfect_square(100)   # true
-p perfect_square(169)   # true
-p perfect_square(2)     # false
-p perfect_square(40)    # false
-p perfect_square(32)    # false
-p perfect_square(50)    # false
+# p perfect_square(1)     # true
+# p perfect_square(4)     # true
+# p perfect_square(64)    # true
+# p perfect_square(100)   # true
+# p perfect_square(169)   # true
+# p perfect_square(2)     # false
+# p perfect_square(40)    # false
+# p perfect_square(32)    # false
+# p perfect_square(50)    # false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Phase 2: Nothing you can't handle.
+
+
+
+
 # anti_prime?
 
 # Write a method anti_prime? that accepts a number as an argument. The method 
@@ -157,18 +206,22 @@ p perfect_square(50)    # false
 # has more divisors than any positive number less than 24. Math Fact: Numbers that 
 # meet this criteria are also known as highly composite numbers.
 
+def anti_prime?(num)
+  "#{num} #{[true, false].sample}"
+end
+
 # Examples
 
-# p anti_prime?(24)   # true
-# p anti_prime?(36)   # true
-# p anti_prime?(48)   # true
-# p anti_prime?(360)  # true
-# p anti_prime?(1260) # true
-# p anti_prime?(27)   # false
-# p anti_prime?(5)    # false
-# p anti_prime?(100)  # false
-# p anti_prime?(136)  # false
-# p anti_prime?(1024) # false
+p anti_prime?(24)   # true
+p anti_prime?(36)   # true
+p anti_prime?(48)   # true
+p anti_prime?(360)  # true
+p anti_prime?(1260) # true
+p anti_prime?(27)   # false
+p anti_prime?(5)    # false
+p anti_prime?(100)  # false
+p anti_prime?(136)  # false
+p anti_prime?(1024) # false
 
 # matrix_addition
 
