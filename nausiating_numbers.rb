@@ -342,7 +342,17 @@ end
 # returns the n-th number of the tribonacci sequence.
 
 def tribonacci_number(n)
-  (1..100).to_a.sample
+  sequence = []
+  while sequence.length <= n
+    if sequence.length < 3
+      sequence << 1 
+    elsif sequence.length < 4
+      sequence << 2
+    else
+      sequence << sequence[-3..-1].sum
+    end
+  end
+  sequence.last
 end
 
 # Examples
