@@ -299,22 +299,23 @@ matrix_e = [[0 , 0], [12, 4], [6,  3]]
 # 10. You can assume that all of the arguments are positive integers.
 
 def mutual_factors(*args)
-
+  (1..args.sort.last).select { |fact| args.all? { |arg| arg % fact == 0 } }
 end
 
+# ~3min(rusty)
 
 # Examples
 
-# p mutual_factors(50, 30)            # [1, 2, 5, 10]
-# p mutual_factors(50, 30, 45, 105)   # [1, 5]
-# p mutual_factors(8, 4)              # [1, 2, 4]
-# p mutual_factors(8, 4, 10)          # [1, 2]
-# p mutual_factors(12, 24)            # [1, 2, 3, 4, 6, 12]
-# p mutual_factors(12, 24, 64)        # [1, 2, 4]
-# p mutual_factors(22, 44)            # [1, 2, 11, 22]
-# p mutual_factors(22, 44, 11)        # [1, 11]
-# p mutual_factors(7)                 # [1, 7]
-# p mutual_factors(7, 9)              # [1]
+p mutual_factors(50, 30)            # [1, 2, 5, 10]
+p mutual_factors(50, 30, 45, 105)   # [1, 5]
+p mutual_factors(8, 4)              # [1, 2, 4]
+p mutual_factors(8, 4, 10)          # [1, 2]
+p mutual_factors(12, 24)            # [1, 2, 3, 4, 6, 12]
+p mutual_factors(12, 24, 64)        # [1, 2, 4]
+p mutual_factors(22, 44)            # [1, 2, 11, 22]
+p mutual_factors(22, 44, 11)        # [1, 11]
+p mutual_factors(7)                 # [1, 7]
+p mutual_factors(7, 9)              # [1]
 
 # tribonacci_number
 
