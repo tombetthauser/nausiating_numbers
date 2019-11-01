@@ -306,16 +306,28 @@ end
 
 # Examples
 
-p mutual_factors(50, 30)            # [1, 2, 5, 10]
-p mutual_factors(50, 30, 45, 105)   # [1, 5]
-p mutual_factors(8, 4)              # [1, 2, 4]
-p mutual_factors(8, 4, 10)          # [1, 2]
-p mutual_factors(12, 24)            # [1, 2, 3, 4, 6, 12]
-p mutual_factors(12, 24, 64)        # [1, 2, 4]
-p mutual_factors(22, 44)            # [1, 2, 11, 22]
-p mutual_factors(22, 44, 11)        # [1, 11]
-p mutual_factors(7)                 # [1, 7]
-p mutual_factors(7, 9)              # [1]
+# p mutual_factors(50, 30)            # [1, 2, 5, 10]
+# p mutual_factors(50, 30, 45, 105)   # [1, 5]
+# p mutual_factors(8, 4)              # [1, 2, 4]
+# p mutual_factors(8, 4, 10)          # [1, 2]
+# p mutual_factors(12, 24)            # [1, 2, 3, 4, 6, 12]
+# p mutual_factors(12, 24, 64)        # [1, 2, 4]
+# p mutual_factors(22, 44)            # [1, 2, 11, 22]
+# p mutual_factors(22, 44, 11)        # [1, 11]
+# p mutual_factors(7)                 # [1, 7]
+# p mutual_factors(7, 9)              # [1]
+
+
+
+
+
+
+
+
+
+
+
+
 
 # tribonacci_number
 
@@ -329,16 +341,20 @@ p mutual_factors(7, 9)              # [1]
 # Write a method tribonacci_number that accepts a number argument, n, and 
 # returns the n-th number of the tribonacci sequence.
 
+def tribonacci_number(n)
+  (1..100).to_a.sample
+end
+
 # Examples
 
-# p tribonacci_number(1)  # 1
-# p tribonacci_number(2)  # 1
-# p tribonacci_number(3)  # 2
-# p tribonacci_number(4)  # 4
-# p tribonacci_number(5)  # 7
-# p tribonacci_number(6)  # 13
-# p tribonacci_number(7)  # 24
-# p tribonacci_number(11) # 274
+p tribonacci_number(1)  # 1
+p tribonacci_number(2)  # 1
+p tribonacci_number(3)  # 2
+p tribonacci_number(4)  # 4
+p tribonacci_number(5)  # 7
+p tribonacci_number(6)  # 13
+p tribonacci_number(7)  # 24
+p tribonacci_number(11) # 274
 
 # Phase 3: Now we're having fun.
 # matrix_addition_reloaded
