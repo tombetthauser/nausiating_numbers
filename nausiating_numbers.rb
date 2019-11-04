@@ -355,6 +355,8 @@ def tribonacci_number(n)
   sequence.last
 end
 
+# ~3.5 min
+
 # Examples
 
 p tribonacci_number(1)  # 1
