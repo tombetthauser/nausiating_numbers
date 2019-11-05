@@ -359,14 +359,14 @@ end
 
 # Examples
 
-p tribonacci_number(1)  # 1
-p tribonacci_number(2)  # 1
-p tribonacci_number(3)  # 2
-p tribonacci_number(4)  # 4
-p tribonacci_number(5)  # 7
-p tribonacci_number(6)  # 13
-p tribonacci_number(7)  # 24
-p tribonacci_number(11) # 274
+# p tribonacci_number(1)  # 1
+# p tribonacci_number(2)  # 1
+# p tribonacci_number(3)  # 2
+# p tribonacci_number(4)  # 4
+# p tribonacci_number(5)  # 7
+# p tribonacci_number(6)  # 13
+# p tribonacci_number(7)  # 24
+# p tribonacci_number(11) # 274
 
 # Phase 3: Now we're having fun.
 # matrix_addition_reloaded
@@ -553,16 +553,29 @@ p tribonacci_number(11) # 274
 # a boolean indicating whether or not that word's number encoding is a triangular 
 # number. You can assume that the argument contains lowercase letters.
 
+def triangular_word?(word)
+
+end
+
+def triangular_num?(input_num)
+  tri_nums = [1]
+  while tri_nums.last <= input_num
+    
+  end
+  false
+end
+
+
 # Examples
 
-# p triangular_word?('abc')       # true
-# p triangular_word?('ba')        # true
-# p triangular_word?('lovely')    # true
-# p triangular_word?('question')  # true
-# p triangular_word?('aa')        # false
-# p triangular_word?('cd')        # false
-# p triangular_word?('cat')       # false
-# p triangular_word?('sink')      # false
+p triangular_word?('abc')       # true
+p triangular_word?('ba')        # true
+p triangular_word?('lovely')    # true
+p triangular_word?('question')  # true
+p triangular_word?('aa')        # false
+p triangular_word?('cd')        # false
+p triangular_word?('cat')       # false
+p triangular_word?('sink')      # false
 
 # consecutive_collapse
 
