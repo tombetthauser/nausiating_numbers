@@ -1217,3 +1217,57 @@ end
 # p pretentious_primes([32, 5, 11], -3)         # [23, nil, 3]
 # p pretentious_primes([32, 5, 11], -4)         # [19, nil, 2]
 # p pretentious_primes([32, 5, 11], -5)         # [17, nil, nil]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Notes for 11.5.19
+system "clear"
+
+print "\nPlease enter height: "
+height = gets.chomp.to_i
+print "\nPlease enter width: "
+width = gets.chomp.to_i
+print "\nPlease enter content: "
+content = gets.chomp
+
+arr = Array.new(height) { Array.new(width, content) }
+
+arr.each { |row| print "\n#{row}" }
+
+print "\n\n(press enter to continue)"
+gets
