@@ -554,15 +554,16 @@ end
 # number. You can assume that the argument contains lowercase letters.
 
 def triangular_word?(word)
-
+  num = ((1..15).to_a.sample)
+  [num, triangular_num?(num)]
 end
 
 def triangular_num?(input_num)
-  tri_nums = [1]
-  while tri_nums.last <= input_num
-    
+  tri_nums = []
+  (1..input_num).each do |i|
+    tri_nums << ((i * (i + 1)) / 2)
   end
-  false
+  tri_nums.include?(input_num)
 end
 
 
