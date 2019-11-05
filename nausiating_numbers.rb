@@ -1271,3 +1271,14 @@ arr.each { |row| print "\n#{row}" }
 
 print "\n\n(press enter to continue)"
 gets
+
+while true
+  system "clear"
+
+  print "\nPlease enter new position: "
+  position = gets.chomp.split(" ").map(&:to_i)
+  print "\nPlease enter width: "
+  width = gets.chomp.to_i
+
+
+end
