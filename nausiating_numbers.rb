@@ -558,6 +558,10 @@ def triangular_word?(word)
   [num, triangular_num?(num)]
 end
 
+def encode_word(word)
+  
+end
+
 def triangular_num?(input_num)
   tri_nums = []
   (1..input_num).each do |i|
