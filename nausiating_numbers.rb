@@ -1269,16 +1269,27 @@ arr = Array.new(height) { Array.new(width, content) }
 
 arr.each { |row| print "\n#{row}" }
 
-print "\n\n(press enter to continue)"
-gets
+# print "\n\n(press enter to continue)"
+# gets
 
 while true
   system "clear"
 
-  print "\nPlease enter new position: "
-  position = gets.chomp.split(" ").map(&:to_i)
-  print "\nPlease enter width: "
-  width = gets.chomp.to_i
+  arr.each { |row| print "\n#{row}" }
 
+  print "\n\nPlease enter new position: "
+  position = gets.chomp.split(" ").map(&:to_i)
+  next if position.length != 2 || position.any? { |num| num < 0 }
+  next if position[0] >= height || position[1] >= width
+
+  row, col = position
+  print "\nPlease enter new content: "
+  content = gets.chomp
+
+  arr[row][col] = content
+
+
+  # print "\n\n(press enter to continue)"
+  # gets
 
 end
